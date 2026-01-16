@@ -105,15 +105,15 @@ export function RepoTemplates({ defaultAccount }: { defaultAccount?: any }) {
         {templates.filter(item => item.featured === true).map((template: any) => (
           <Dialog key={template.repository}>
             <DialogTrigger asChild>
-              <button
-                className="border rounded-md overflow-hidden hover:cursor-pointer hover:bg-accent ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              <Button
+                className="border rounded-md overflow-hidden hover:cursor-pointer ring-offset-background flex-col items-stretch text-left w-full h-auto p-0"
               >
                 <img src={template.thumbnail} alt={`Preview for ${template.name}`} className="aspect-video"/>
                 <div className="flex gap-x-2 items-center px-3 py-2 border-t border-t-accent text-sm">
                   <div dangerouslySetInnerHTML={{ __html: template.icon }} className="w-4 h-4 shrink-0" />
                   <div className="font-medium truncate">{template.name}</div>
                 </div>
-              </button>
+              </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <form action={copyTemplateAction} className="grid gap-4">

@@ -210,8 +210,9 @@ export function CollectionTable<TData extends TableData>({
                         }}
                       >
                         {isTree
-                          ? <button
-                              className="flex items-center gap-x-2 font-medium"
+                          ? <Button
+                              type="button"
+                              className="h-auto px-2 py-1 justify-start gap-x-2"
                               onClick={() => handleRowExpansion(row as Row<TData>)}
                             >
                               {loadingRows[row.id]
@@ -221,7 +222,7 @@ export function CollectionTable<TData extends TableData>({
                                   : <Folder className="h-4 w-4" />
                               }
                               {row.original.name}
-                            </button>
+                            </Button>
                           : <Link
                               className="flex items-center gap-x-2 font-medium"
                               href={`${pathname}?path=${encodeURIComponent(row.original.path)}`}

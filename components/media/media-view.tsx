@@ -306,8 +306,9 @@ const MediaView = ({
                     {filteredData.map((item, index) => 
                       <li key={item.path}>
                         {item.type === "dir"
-                          ? <button
-                              className="hover:bg-muted focus:ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2 outline-none rounded-md block w-full"
+                          ? <Button
+                              type="button"
+                              className="rounded-md w-full h-auto p-0 justify-start items-stretch flex-col text-left"
                               onClick={() => handleNavigate(item.path)}
                             >
                               <div className="flex items-center justify-center aspect-video">
@@ -318,7 +319,7 @@ const MediaView = ({
                                   <div className="text-sm font-medium truncate">{item.name}</div>
                                 </div>
                               </div>
-                            </button>
+                            </Button>
                           : <label htmlFor={`item-${index}`}>
                               {onSelect &&
                                 <input 
