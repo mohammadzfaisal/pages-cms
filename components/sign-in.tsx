@@ -32,7 +32,7 @@ export function SignIn() {
       <div className="sm:max-w-[340px] w-full space-y-6">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-center">Sign in to CMS Panel</h1>
         <form action={handleGithubSignIn}>
-          <SubmitButton type="submit" className="w-full">
+          <SubmitButton type="submit" variant="brand" className="w-full">
             <Github className="h-4 w-4 mr-2" />
             Sign in with GitHub
           </SubmitButton>
@@ -50,7 +50,7 @@ export function SignIn() {
           {emailSignInState?.error &&
             <div className="text-sm font-medium text-red-500">{emailSignInState.error}</div>
           }
-          <SubmitButton type="submit" className="w-full">
+          <SubmitButton type="submit" variant="brand" className="w-full">
             Sign in with email
           </SubmitButton>
         </form>
