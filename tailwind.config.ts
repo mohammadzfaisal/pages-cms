@@ -20,9 +20,9 @@ const config = {
     },
     extend: {
       fontFamily: {
-        heading: ["var(--font-heading)"],
+        heading: ["var(--font-sans)"],
         sans: ["var(--font-sans)"],
-        button: ["waldenburgNormal", "\"waldenburgNormal Fallback\"", "sans-serif"]
+        button: ["var(--font-sans)"]
       },
       colors: {
         border: "hsl(var(--border))",
