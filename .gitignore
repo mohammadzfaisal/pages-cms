@@ -37,3 +37,6 @@ next-env.d.ts
 
 # Database
 local.db
+
+# Vercel env variables (contains secrets)
+vercel-env-variables.txt
