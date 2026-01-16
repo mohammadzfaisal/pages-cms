@@ -21,7 +21,8 @@ const config = {
     extend: {
       fontFamily: {
         heading: ["var(--font-heading)"],
-        sans: ["var(--font-sans)"]
+        sans: ["var(--font-sans)"],
+        button: ["waldenburgNormal", "\"waldenburgNormal Fallback\"", "sans-serif"]
       },
       colors: {
         border: "hsl(var(--border))",
