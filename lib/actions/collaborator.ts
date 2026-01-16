@@ -67,7 +67,7 @@ const handleAddCollaborator = async (prevState: any, formData: FormData) => {
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL!,
       to: [email],
-      subject: `Join "${owner}/${repo}" on Pages CMS`,
+      subject: `Join "${owner}/${repo}" on cmspanel`,
       react: InviteEmailTemplate({
         inviteUrl,
         repoName: `${formData.get("owner")}/${formData.get("repo")}`,

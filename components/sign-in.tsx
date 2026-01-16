@@ -30,7 +30,7 @@ export function SignIn() {
   return (
     <div className="h-screen p-4 md:p-6 flex justify-center items-center">
       <div className="sm:max-w-[340px] w-full space-y-6">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-center">Sign in to CMS Panel</h1>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-center">Sign in to cmspanel</h1>
         <form action={handleGithubSignIn}>
           <SubmitButton type="submit" variant="brand" className="w-full">
             <Github className="h-4 w-4 mr-2" />
