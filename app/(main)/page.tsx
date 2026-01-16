@@ -37,11 +37,11 @@ export default function Page() {
 					:	user.githubId
 							? <Message
 									title="Install the GitHub app"
-									description="You must install the GitHub application for the accounts you want to use Pages CMS with."
+									description="You must install the GitHub application for the accounts you want to use cmspanel with."
 									className="absolute inset-0"
 								>
 									<form action={handleAppInstall}>
-										<SubmitButton type="submit">
+										<SubmitButton type="submit" variant="brand">
 											<Github className="h-4 w-4 mr-2" />
 											Install
 										</SubmitButton>
