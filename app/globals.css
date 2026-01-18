@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 27%;
-    --card: 0 0% 96%;
-    --card-foreground: 0 0% 27%;
-    --popover: 0 0% 96%;
-    --popover-foreground: 0 0% 27%;
-    --primary: 0 0% 7%;
-    --primary-foreground: 0 0% 100%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 2%;
+    --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 44%;
+    --muted-foreground: 0 0% 45%;
     --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 2%;
+    --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
-    --ring: 0 0% 7%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 9%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 11%;
-    --foreground: 0 0% 71%;
-    --card: 0 0% 13%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 13%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 2%;
-    --secondary: 0 0% 13%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 13%;
-    --muted-foreground: 0 0% 71%;
-    --accent: 0 0% 13%;
-    --accent-foreground: 0 0% 100%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 24%;
-    --input: 0 0% 24%;
-    --ring: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 83%;
   }
 }
 
@@ -54,11 +54,83 @@
     @apply border-border;
   }
   html {
-    @apply text-base-sm md:text-base bg-background text-foreground;
+    @apply text-base-sm md:text-base text-foreground;
     color-scheme: light;
+    background: transparent;
+    scroll-behavior: smooth;
   }
   body {
-    @apply bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
+    @apply text-base font-primary font-normal leading-relaxed text-foreground;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(0 0% 8%) 0%, transparent 60%),
+      linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(0 0% 0%) 100%);
+    min-height: 100vh;
+  }
+
+  /* Smooth transitions for interactive elements */
+  a, button, [role="button"], input, textarea, select {
+    transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 150ms cubic-bezier(0.4, 0, 0.2, 1),
+                transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Focus visible for keyboard navigation (WCAG 2.4.7) */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Subtle hover lift for buttons */
+  button:not(:disabled):hover,
+  a[role="button"]:hover,
+  [role="button"]:not([aria-disabled="true"]):hover {
+    transform: translateY(-1px);
+  }
+
+  button:not(:disabled):active,
+  a[role="button"]:active,
+  [role="button"]:not([aria-disabled="true"]):active {
+    transform: translateY(0);
+  }
+
+  /* Reduce motion for accessibility (WCAG 2.3.3) */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Skip to main content link for keyboard navigation (WCAG 2.4.1) */
+  .skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1rem 1.5rem;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    text-decoration: none;
+    border-radius: 0.5rem;
+  }
+
+  .skip-to-main:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  /* Ensure links have sufficient contrast and underline (WCAG 1.4.1) */
+  main a:not([role="button"]):not([class*="button"]) {
+    text-decoration: underline;
+    text-decoration-color: hsl(var(--muted-foreground));
+    text-underline-offset: 0.2em;
+  }
+
+  main a:not([role="button"]):not([class*="button"]):hover {
+    text-decoration-color: currentColor;
   }
   .dark {
     color-scheme: dark;
@@ -69,7 +141,7 @@
   h4,
   h5,
   h6 {
-    @apply font-secondary font-bold leading-tight text-text-dark dark:text-darkmode-text-dark;
+    @apply font-secondary font-bold leading-tight text-foreground;
   }
   h1,
   .h1 {
@@ -130,7 +202,7 @@
     @apply inline-block;
   }
   .social-icons li a {
-    @apply flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-center leading-9 text-white dark:bg-darkmode-primary dark:text-text-dark;
+    @apply flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-center leading-9 text-primary-foreground;
   }
   .social-icons li a svg {
     @apply h-5 w-5;
@@ -149,7 +221,7 @@
   }
 
   .notice-head p {
-    @apply font-secondary text-xl font-semibold text-text-dark dark:text-darkmode-text-light;
+    @apply font-secondary text-xl font-semibold text-foreground;
   }
 
   .notice-body {
@@ -181,19 +253,19 @@
   }
 
   .tab {
-    @apply overflow-hidden rounded-lg border border-border dark:border-darkmode-border;
+    @apply overflow-hidden rounded-lg border border-border;
   }
 
   .tab-nav {
-    @apply flex border-b border-border bg-light dark:border-darkmode-border dark:bg-darkmode-light !m-0 !list-none;
+    @apply flex border-b border-border bg-muted !m-0 !list-none;
   }
 
   .tab-nav-item {
-    @apply cursor-pointer border-b-[3px] border-border py-2 text-lg text-text-dark opacity-80 dark:border-darkmode-border !my-0 !px-8;
+    @apply cursor-pointer border-b-[3px] border-transparent py-2 text-lg text-muted-foreground opacity-80 !my-0 !px-8;
   }
 
   .tab-nav-item.active {
-    @apply border-b-[3px] border-dark opacity-100 dark:border-darkmode-primary;
+    @apply border-b-[3px] border-foreground opacity-100;
   }
 
   .tab-content {
@@ -213,11 +285,11 @@
   }
 
   .accordion {
-    @apply mb-6 overflow-hidden rounded-lg border border-border bg-light dark:border-darkmode-border dark:bg-darkmode-light;
+    @apply mb-6 overflow-hidden rounded-lg border border-border bg-card;
   }
 
   .accordion-header {
-    @apply flex w-full cursor-pointer items-center justify-between px-8 py-4 text-lg text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-light;
+    @apply flex w-full cursor-pointer items-center justify-between px-8 py-4 text-lg text-foreground bg-card;
   }
 
   .accordion-icon {
@@ -245,15 +317,15 @@
   }
 
   .modal-content {
-    @apply relative top-1/2 z-50 mx-auto max-w-[90%] -translate-y-1/2 rounded-lg bg-body p-8 dark:bg-darkmode-body;
+    @apply relative top-1/2 z-50 mx-auto max-w-[90%] -translate-y-1/2 rounded-lg bg-card border border-border p-8;
   }
 
   .modal-close {
-    @apply absolute right-3 top-3 h-8 w-8 rounded-full bg-light text-center leading-8 text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-dark;
+    @apply absolute right-3 top-3 h-8 w-8 rounded-full bg-secondary text-center leading-8 text-foreground;
   }
 
   .header {
-    @apply bg-body dark:bg-darkmode-body py-6;
+    @apply bg-background border-b border-border py-6;
   }
 
   .navbar {
@@ -261,7 +333,7 @@
   }
 
   .navbar-brand {
-    @apply text-text-dark dark:text-darkmode-text-dark text-xl font-semibold;
+    @apply text-foreground text-xl font-semibold;
   }
 
   .navbar-nav {
@@ -269,7 +341,7 @@
   }
 
   .nav-link {
-    @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block p-3 cursor-pointer font-semibold transition lg:px-2 lg:py-3;
+    @apply text-muted-foreground hover:text-foreground block p-3 cursor-pointer font-medium transition lg:px-2 lg:py-3;
   }
 
   .nav-dropdown {
@@ -281,7 +353,7 @@
   }
 
   .nav-dropdown-list {
-    @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded p-4 shadow-sm;
+    @apply bg-card border border-border z-10 min-w-[180px] rounded p-4 shadow-lg;
   }
 
   .nav-dropdown-item {
@@ -289,7 +361,7 @@
   }
 
   .nav-dropdown-link {
-    @apply text-text-dark hover:text-primary dark:text-darkmode-text dark:hover:text-darkmode-primary block py-1 font-semibold transition;
+    @apply text-muted-foreground hover:text-foreground block py-1 font-medium transition;
   }
 
   .theme-switcher {
@@ -322,22 +394,22 @@
     @apply fixed top-0 left-0 w-full h-full bg-black opacity-50;
   }
   .search-wrapper {
-    @apply bg-white dark:bg-darkmode-body w-[660px] max-w-[96%] mt-24 rounded shadow-lg relative z-10;
+    @apply bg-card border border-border w-[660px] max-w-[96%] mt-24 rounded shadow-lg relative z-10;
   }
   .search-wrapper-header {
     @apply p-4 relative;
   }
   .search-wrapper-header-input {
-    @apply border border-solid w-full focus:ring-0 focus:border-dark border-border rounded-[4px] h-12 pr-4 pl-10 transition duration-200 outline-none dark:bg-darkmode-light dark:text-darkmode-text dark:border-darkmode-border dark:focus:border-darkmode-primary;
+    @apply border border-solid w-full focus:ring-0 focus:border-foreground border-border rounded-[4px] h-12 pr-4 pl-10 transition duration-200 outline-none bg-background text-foreground;
   }
   .search-wrapper-body {
-    @apply dark:bg-darkmode-light dark:shadow-none max-h-[calc(100vh-350px)] overflow-y-auto bg-light shadow-[inset_0_2px_18px_#ddd] p-4 rounded;
+    @apply max-h-[calc(100vh-350px)] overflow-y-auto bg-muted p-4 rounded;
   }
   .search-wrapper-footer {
     @apply text-xs select-none leading-none md:flex items-center px-3.5 py-2 hidden;
   }
   .search-wrapper-footer kbd {
-    @apply bg-light dark:bg-darkmode-light text-xs leading-none text-center mr-[3px] px-1 py-0.5 rounded-[3px];
+    @apply bg-muted text-xs leading-none text-center mr-[3px] px-1 py-0.5 rounded-[3px];
   }
   .search-wrapper-footer span:not(:last-child) {
     @apply mr-4;
@@ -352,16 +424,16 @@
     @apply mb-4;
   }
   .search-result-group-title {
-    @apply text-lg text-text-dark dark:text-darkmode-text-dark mb-[5px] px-3;
+    @apply text-lg text-foreground mb-[5px] px-3;
   }
   .search-result-item {
-    @apply rounded border bg-white dark:bg-darkmode-body dark:border-darkmode-border flex items-start mb-1 p-4 scroll-my-[30px] border-solid border-border relative;
+    @apply rounded border bg-card flex items-start mb-1 p-4 scroll-my-[30px] border-solid border-border relative;
   }
   .search-result-item mark {
     @apply bg-yellow-200 rounded-[2px];
   }
   .search-result-item-title {
-    @apply text-lg font-bold text-text-dark dark:text-darkmode-text-dark leading-none;
+    @apply text-lg font-bold text-foreground leading-none;
   }
   .search-result-item-link::after {
     @apply absolute top-0 right-0 bottom-0 left-0 z-10 content-[""];
@@ -387,7 +459,7 @@
     overflow: hidden;
   }
   .search-result-item-taxonomies {
-    @apply text-sm flex flex-wrap items-center text-text-light dark:text-darkmode-text-light;
+    @apply text-sm flex flex-wrap items-center text-muted-foreground;
   }
   .search-result-item-taxonomies svg {
     @apply inline-block mr-1;
@@ -395,41 +467,41 @@
   .search-result-item-active,
   .search-result-item:focus,
   .search-result-item:hover {
-    @apply bg-dark dark:bg-dark;
+    @apply bg-accent;
   }
   .search-result-item-active .search-result-item-title,
   .search-result-item:focus .search-result-item-title,
   .search-result-item:hover .search-result-item-title {
-    @apply text-white;
+    @apply text-accent-foreground;
   }
   .search-result-item-active .search-result-item-description,
   .search-result-item:focus .search-result-item-description,
   .search-result-item:hover .search-result-item-description {
-    @apply text-white/80;
+    @apply text-accent-foreground/80;
   }
   .search-result-item-active .search-result-item-content,
   .search-result-item:focus .search-result-item-content,
   .search-result-item:hover .search-result-item-content {
-    @apply text-white/90;
+    @apply text-accent-foreground/90;
   }
   .search-result-item-active .search-result-item-taxonomies,
   .search-result-item:focus .search-result-item-taxonomies,
   .search-result-item:hover .search-result-item-taxonomies {
-    @apply text-white/90;
+    @apply text-accent-foreground/90;
   }
 }
 
 @layer utilities {
   .bg-gradient {
-    @apply bg-gradient-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%] dark:from-darkmode-light dark:to-darkmode-body;
+    @apply bg-gradient-to-b from-muted/50 to-background;
   }
 
   .form-input {
-    @apply w-full rounded border-transparent bg-light px-6 py-4 text-text-dark placeholder:text-text-light focus:border-primary dark:focus:border-darkmode-primary focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-light dark:text-darkmode-text-light;
+    @apply w-full rounded border border-input bg-background px-6 py-4 text-foreground placeholder:text-muted-foreground focus:border-ring focus:ring-1 focus:ring-ring outline-none transition-colors;
   }
 
   .form-label {
-    @apply mb-4 block font-secondary text-xl font-normal text-text-dark dark:text-darkmode-text-light;
+    @apply mb-4 block font-secondary text-xl font-normal text-foreground;
   }
 
   input#nav-toggle:checked + label #show-button {
@@ -445,11 +517,11 @@
   }
 
   .swiper-pagination-bullet {
-    @apply h-2.5 w-2.5 bg-light opacity-100 dark:bg-darkmode-light;
+    @apply h-2.5 w-2.5 bg-muted opacity-100;
   }
 
   .swiper-pagination-bullet-active {
-    @apply h-4 w-4 bg-primary dark:bg-darkmode-primary;
+    @apply h-4 w-4 bg-primary;
   }
 }
 

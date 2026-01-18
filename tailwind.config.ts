@@ -56,25 +56,6 @@ const config = {
         button: ["var(--font-sans)", "Inter", "Heebo", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       colors: {
-        body: "#ffffff",
-        light: "#f6f6f6",
-        dark: "#040404",
-        text: "#444444",
-        "text-dark": "#040404",
-        "text-light": "#717171",
-        "darkmode-primary": "#ffffff",
-        "darkmode-body": "#1c1c1c",
-        "darkmode-border": "#3E3E3E",
-        "darkmode-light": "#222222",
-        "darkmode-dark": "#ffffff",
-        "darkmode-text": "#B4AFB6",
-        "darkmode-text-dark": "#ffffff",
-        "darkmode-text-light": "#B4AFB6",
-        resend: {
-          black: "#000000",
-          white: "#ffffff",
-          gray: "#888888"
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

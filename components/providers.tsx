@@ -9,8 +9,8 @@ export function Providers({ children, user }: { children: React.ReactNode, user:
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="dark"
+      enableSystem={false}
       disableTransitionOnChange
     >
       <UserProvider user={user}>
