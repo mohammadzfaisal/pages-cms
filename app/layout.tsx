@@ -1,19 +1,19 @@
 import { Toaster } from "@/components/ui/sonner"
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
-const plexSans = IBM_Plex_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Pages CMS",
-    default: "Pages CMS",
+    template: "%s | frontmatter",
+    default: "frontmatter",
   },
   description: "The No-Hassle CMS for GitHub",
 };
@@ -28,7 +28,7 @@ export default async function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          plexSans.variable
+          inter.variable
         )}
       >
         {children}

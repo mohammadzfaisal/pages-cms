@@ -30,7 +30,7 @@ export const LoginEmailTemplate = ({
   return (
     <Html>
       <Head />
-      <Preview>Sign in to cmspanel</Preview>
+      <Preview>Sign in to frontmatter</Preview>
       <Tailwind>
         <Body className="bg-white my-auto mx-auto font-sans px-2 antialiased">
           <Container className="rounded my-[40px] mx-auto p-[20px] max-w-[465px]">
@@ -39,14 +39,14 @@ export const LoginEmailTemplate = ({
                 src={`${baseUrl}/images/email-logo.png`}
                 width="36"
                 height="36"
-                alt="Pages CMS"
+                alt="frontmatter"
                 className="my-0 mx-auto"
               />
             </Section>
             <Heading className="text-[#0a0a0a] text-[24px] font-semibold p-0 my-[30px] mx-0 text-center tracking-tight">
-              Sign in to cmspanel
+              Sign in to frontmatter
             </Heading>
-            <Text className="text-[#0a0a0a] text-[16px] leading-[24px]">Click the button below to sign in to cmspanel:</Text>
+            <Text className="text-[#0a0a0a] text-[16px] leading-[24px]">Click the button below to sign in to frontmatter:</Text>
             <Section className="text-center mt-[24px] mb-[24px]">
               <Button
                 className="bg-[#171717] rounded-lg text-white text-[14px] font-medium no-underline text-center px-5 py-3"

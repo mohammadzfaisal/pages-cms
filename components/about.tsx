@@ -30,17 +30,17 @@ export function About({
           <DialogTrigger asChild>
             <Button variant="ghost" size="icon">
               <CircleHelp className="h-4 w-4" />
-              <span className="sr-only">About Pages CMS</span>
+              <span className="sr-only">About frontmatter</span>
             </Button>
           </DialogTrigger>
         </TooltipTrigger>
         <TooltipContent>
-          About Pages CMS</TooltipContent>
+          About frontmatter</TooltipContent>
       </Tooltip>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>About Pages CMS</DialogTitle>
-          <DialogDescription>Pages CMS is an Open Source Content Management System built for static websites (Jekyll, Next.js, VuePress, Hugo, etc). It allows you to edit your website&apos;s content directly on GitHub via a user-friendly interface.</DialogDescription>
+          <DialogTitle>About frontmatter</DialogTitle>
+          <DialogDescription>frontmatter is an Open Source Content Management System built for static websites (Jekyll, Next.js, VuePress, Hugo, etc). It allows you to edit your website&apos;s content directly on GitHub via a user-friendly interface.</DialogDescription>
         </DialogHeader>
         <footer className="grid grid-flow-col justify-stretch text-sm gap-x-2">
           <a className={cn(buttonVariants({ variant: "outline", size: "sm" }), "w-full")} href="https://pagescms.org" target="_blank">

@@ -45,14 +45,14 @@ export const InviteEmailTemplate = ({
                 src={`${baseUrl}/images/email-logo.png`}
                 width="36"
                 height="36"
-                alt="Pages CMS"
+                alt="frontmatter"
                 className="my-0 mx-auto"
               />
             </Section>
             <Heading className="text-[#0a0a0a] text-[24px] font-semibold p-0 my-[30px] mx-0 text-center tracking-tight">
-              Join &quot;{repoName}&quot; on cmspanel
+              Join &quot;{repoName}&quot; on frontmatter
             </Heading>
-            <Text className="text-[#0a0a0a] text-[16px] leading-[24px]"><Link href={invitedByUrl} className="text-[#0a0a0a] underline rounded-md">{invitedByName}</Link> has invited you to the &quot;{repoName}&quot; project on cmspanel. Use the following link to start collaborating:</Text>
+            <Text className="text-[#0a0a0a] text-[16px] leading-[24px]"><Link href={invitedByUrl} className="text-[#0a0a0a] underline rounded-md">{invitedByName}</Link> has invited you to the &quot;{repoName}&quot; project on frontmatter. Use the following link to start collaborating:</Text>
             <Section className="text-center mt-[24px] mb-[24px]">
               <Button
                 className="bg-[#171717] rounded-lg text-white text-[14px] font-medium no-underline text-center px-5 py-3"

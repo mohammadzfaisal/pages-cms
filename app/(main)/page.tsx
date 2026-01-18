@@ -37,7 +37,7 @@ export default function Page() {
 					:	user.githubId
 							? <Message
 									title="Install the GitHub app"
-									description="You must install the GitHub application for the accounts you want to use cmspanel with."
+									description="You must install the GitHub application for the accounts you want to use frontmatter with."
 									className="absolute inset-0"
 								>
 									<form action={handleAppInstall}>

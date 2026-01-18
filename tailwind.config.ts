@@ -20,11 +20,31 @@ const config = {
     },
     extend: {
       fontFamily: {
-        heading: ["var(--font-sans)"],
-        sans: ["var(--font-sans)"],
-        button: ["var(--font-sans)"]
+        heading: [
+          "var(--font-sans)",
+          "Inter",
+          "Geist",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ],
+        sans: [
+          "var(--font-sans)",
+          "Inter",
+          "Geist",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "monospace"],
+        button: ["var(--font-sans)", "Inter", "Geist", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       colors: {
+        resend: {
+          black: "#000000",
+          white: "#ffffff",
+          gray: "#888888"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
