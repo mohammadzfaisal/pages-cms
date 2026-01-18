@@ -54,7 +54,7 @@ export function RepoLayout({
         </main>
       </div>
       <div className="xl:hidden">
-        <div className="fixed top-0 left-0 right-0 bg-background border-b h-14 flex items-center px-4 md:px-6">
+        <div className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md border-b h-14 flex items-center px-4 md:px-6">
           <Button variant="outline" size="icon" className="gap-x-2" onClick={() => setMenuOpen(true)}>
             <Menu className="h-4 w-4" />
           </Button>

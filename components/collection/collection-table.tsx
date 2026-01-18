@@ -155,13 +155,13 @@ export function CollectionTable<TData extends TableData>({
       <Table className="border-separate border-spacing-0 text-base"> 
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} className="sticky -top-4 md:-top-6 z-20 bg-background hover:bg-background">
+            <TableRow key={headerGroup.id} className="sticky -top-4 md:-top-6 z-20 bg-background/80 backdrop-blur-md hover:bg-background/80">
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead
                     key={header.id}
                     className={cn(
-                      "text-xs px-3 h-12 first:pl-0 last:pr-0 border-b hover:bg-muted/50 cursor-pointer select-none last:cursor-default last:hover:bg-background truncate",
+                      "text-xs px-3 h-12 first:pl-0 last:pr-0 border-b hover:bg-muted/50 cursor-pointer select-none last:cursor-default last:hover:bg-background/80 truncate",
                       header.column.columnDef.meta?.className
                     )}
                     onClick={header.column.getToggleSortingHandler()}
