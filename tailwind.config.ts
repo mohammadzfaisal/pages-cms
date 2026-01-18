@@ -20,10 +20,26 @@ const config = {
     },
     extend: {
       fontFamily: {
+        primary: [
+          "var(--font-sans)",
+          "Inter",
+          "Heebo",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ],
+        secondary: [
+          "var(--font-sans)",
+          "Inter",
+          "Signika",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ],
         heading: [
           "var(--font-sans)",
           "Inter",
-          "Geist",
+          "Signika",
           "ui-sans-serif",
           "system-ui",
           "sans-serif"
@@ -31,15 +47,29 @@ const config = {
         sans: [
           "var(--font-sans)",
           "Inter",
-          "Geist",
+          "Heebo",
           "ui-sans-serif",
           "system-ui",
           "sans-serif"
         ],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "monospace"],
-        button: ["var(--font-sans)", "Inter", "Geist", "ui-sans-serif", "system-ui", "sans-serif"]
+        button: ["var(--font-sans)", "Inter", "Heebo", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       colors: {
+        body: "#ffffff",
+        light: "#f6f6f6",
+        dark: "#040404",
+        text: "#444444",
+        "text-dark": "#040404",
+        "text-light": "#717171",
+        "darkmode-primary": "#ffffff",
+        "darkmode-body": "#1c1c1c",
+        "darkmode-border": "#3E3E3E",
+        "darkmode-light": "#222222",
+        "darkmode-dark": "#ffffff",
+        "darkmode-text": "#B4AFB6",
+        "darkmode-text-dark": "#ffffff",
+        "darkmode-text-light": "#B4AFB6",
         resend: {
           black: "#000000",
           white: "#ffffff",
@@ -83,6 +113,22 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontSize: {
+        base: "16px",
+        "base-sm": "12.8px",
+        h6: "1.2rem",
+        "h6-sm": "1.08rem",
+        h5: "1.44rem",
+        "h5-sm": "1.296rem",
+        h4: "1.728rem",
+        "h4-sm": "1.5552rem",
+        h3: "2.0736rem",
+        "h3-sm": "1.86624rem",
+        h2: "2.48832rem",
+        "h2-sm": "2.239488rem",
+        h1: "2.985984rem",
+        "h1-sm": "2.6873856rem",
       },
     },
   },

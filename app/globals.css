@@ -4,47 +4,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 6%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 0 0% 10%;
-    --accent-foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 27%;
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 27%;
+    --popover: 0 0% 96%;
+    --popover-foreground: 0 0% 27%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 2%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 44%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 0 0% 100%;
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 0 0% 7%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 4%;
+    --background: 0 0% 11%;
+    --foreground: 0 0% 71%;
+    --card: 0 0% 13%;
     --card-foreground: 0 0% 100%;
-    --popover: 0 0% 4%;
+    --popover: 0 0% 13%;
     --popover-foreground: 0 0% 100%;
     --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 6%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 13%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 0 0% 10%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 71%;
+    --accent: 0 0% 13%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
+    --border: 0 0% 24%;
+    --input: 0 0% 24%;
     --ring: 0 0% 100%;
   }
 }
@@ -54,78 +54,402 @@
     @apply border-border;
   }
   html {
-    @apply bg-background text-foreground;
-    color-scheme: dark;
+    @apply text-base-sm md:text-base bg-background text-foreground;
+    color-scheme: light;
   }
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "ss01" 1, "ss02" 1, "cv01" 1, "cv03" 1;
-    letter-spacing: -0.01em;
-    background-image:
-      radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 55%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 45%);
+    @apply bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
+  }
+  .dark {
+    color-scheme: dark;
   }
   h1,
   h2,
   h3,
-  h4 {
-    @apply font-heading tracking-tight;
+  h4,
+  h5,
+  h6 {
+    @apply font-secondary font-bold leading-tight text-text-dark dark:text-darkmode-text-dark;
   }
-  input,
-  textarea,
-  select {
-    @apply bg-transparent text-foreground placeholder:text-muted-foreground;
+  h1,
+  .h1 {
+    @apply text-h1-sm md:text-h1;
+  }
+  h2,
+  .h2 {
+    @apply text-h2-sm md:text-h2;
+  }
+  h3,
+  .h3 {
+    @apply text-h3-sm md:text-h3;
+  }
+  h4,
+  .h4 {
+    @apply text-h4;
+  }
+  h5,
+  .h5 {
+    @apply text-h5;
+  }
+  h6,
+  .h6 {
+    @apply text-h6;
+  }
+  b,
+  strong {
+    @apply font-semibold;
+  }
+  code {
+    @apply after:border-none;
+  }
+  blockquote > p {
+    @apply my-0;
+  }
+  button {
+    @apply cursor-pointer;
   }
 }
 
 @layer components {
-  .btn-resend {
-    @apply inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-black transition;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+  .section {
+    @apply py-24 xl:py-28;
   }
 
-  .btn-resend:hover {
-    box-shadow: 0 0 18px rgba(255, 255, 255, 0.35);
+  .section-sm {
+    @apply py-16 xl:py-20;
   }
 
-  .btn-resend-invert {
-    @apply inline-flex items-center justify-center rounded-md border border-white/10 bg-black px-4 py-2 text-sm font-medium text-white transition;
+  .container {
+    @apply mx-auto xl:!max-w-[1320px] px-4;
   }
 
-  .btn-resend-invert:hover {
-    @apply border-white/30;
+  .social-icons {
+    @apply space-x-4;
+  }
+  .social-icons li {
+    @apply inline-block;
+  }
+  .social-icons li a {
+    @apply flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-center leading-9 text-white dark:bg-darkmode-primary dark:text-text-dark;
+  }
+  .social-icons li a svg {
+    @apply h-5 w-5;
+  }
+
+  .notice {
+    @apply mb-6 rounded-lg border px-8 py-6;
+  }
+
+  .notice-head {
+    @apply flex items-center;
+  }
+
+  .notice-head svg {
+    @apply mr-3;
+  }
+
+  .notice-head p {
+    @apply font-secondary text-xl font-semibold text-text-dark dark:text-darkmode-text-light;
+  }
+
+  .notice-body {
+    @apply mt-3;
+  }
+
+  .notice-body p {
+    @apply my-0;
+  }
+
+  .notice.note {
+    @apply text-[#1B83E2];
+    @apply border-current;
+  }
+
+  .notice.tip {
+    @apply text-[#40D294];
+    @apply border-current;
+  }
+
+  .notice.info {
+    @apply text-[#E3A72C];
+    @apply border-current;
+  }
+
+  .notice.warning {
+    @apply text-[#DB2C23];
+    @apply border-current;
+  }
+
+  .tab {
+    @apply overflow-hidden rounded-lg border border-border dark:border-darkmode-border;
+  }
+
+  .tab-nav {
+    @apply flex border-b border-border bg-light dark:border-darkmode-border dark:bg-darkmode-light !m-0 !list-none;
+  }
+
+  .tab-nav-item {
+    @apply cursor-pointer border-b-[3px] border-border py-2 text-lg text-text-dark opacity-80 dark:border-darkmode-border !my-0 !px-8;
+  }
+
+  .tab-nav-item.active {
+    @apply border-b-[3px] border-dark opacity-100 dark:border-darkmode-primary;
+  }
+
+  .tab-content {
+    @apply px-5;
+  }
+
+  .tab-content-panel {
+    @apply p-8;
+  }
+
+  .tab-content-panel p {
+    @apply mb-0;
+  }
+
+  .tab-content-panel.active {
+    @apply block;
+  }
+
+  .accordion {
+    @apply mb-6 overflow-hidden rounded-lg border border-border bg-light dark:border-darkmode-border dark:bg-darkmode-light;
+  }
+
+  .accordion-header {
+    @apply flex w-full cursor-pointer items-center justify-between px-8 py-4 text-lg text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-light;
+  }
+
+  .accordion-icon {
+    @apply h-[.8em] w-[.8em] rotate-[-90deg] transition-transform duration-200;
+  }
+
+  .accordion-content {
+    @apply max-h-0 overflow-hidden px-8 py-0;
+  }
+
+  .accordion.active .accordion-icon {
+    @apply rotate-0;
+  }
+
+  .accordion.active .accordion-content {
+    @apply max-h-screen;
+  }
+
+  .modal {
+    @apply fixed inset-0 z-40 hidden h-full w-full overflow-auto;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 z-40 hidden h-full w-full bg-black/40;
+  }
+
+  .modal-content {
+    @apply relative top-1/2 z-50 mx-auto max-w-[90%] -translate-y-1/2 rounded-lg bg-body p-8 dark:bg-darkmode-body;
+  }
+
+  .modal-close {
+    @apply absolute right-3 top-3 h-8 w-8 rounded-full bg-light text-center leading-8 text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-dark;
+  }
+
+  .header {
+    @apply bg-body dark:bg-darkmode-body py-6;
+  }
+
+  .navbar {
+    @apply relative flex flex-wrap items-center justify-between;
+  }
+
+  .navbar-brand {
+    @apply text-text-dark dark:text-darkmode-text-dark text-xl font-semibold;
+  }
+
+  .navbar-nav {
+    @apply text-center lg:text-left;
+  }
+
+  .nav-link {
+    @apply text-text-dark hover:text-primary dark:text-darkmode-text-dark dark:hover:text-darkmode-primary block p-3 cursor-pointer font-semibold transition lg:px-2 lg:py-3;
+  }
+
+  .nav-dropdown {
+    @apply mr-0;
+  }
+
+  .nav-dropdown > svg {
+    @apply pointer-events-none;
+  }
+
+  .nav-dropdown-list {
+    @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded p-4 shadow-sm;
+  }
+
+  .nav-dropdown-item {
+    @apply [&:not(:last-child)]:mb-2;
+  }
+
+  .nav-dropdown-link {
+    @apply text-text-dark hover:text-primary dark:text-darkmode-text dark:hover:text-darkmode-primary block py-1 font-semibold transition;
+  }
+
+  .theme-switcher {
+    @apply inline-flex;
+  }
+
+  .theme-switcher label {
+    @apply bg-border relative inline-block h-4 w-6 cursor-pointer rounded-2xl lg:w-10;
+  }
+
+  .theme-switcher input {
+    @apply absolute opacity-0;
+  }
+
+  .theme-switcher span {
+    @apply bg-dark absolute -top-1 left-0 flex h-6 w-6 items-center justify-center rounded-full transition-all duration-300 dark:bg-white;
+  }
+
+  .theme-switcher input:checked + label span {
+    @apply lg:left-4;
+  }
+
+  .search-modal {
+    @apply z-50 fixed top-0 left-0 w-full h-full flex items-start justify-center invisible opacity-0;
+  }
+  .search-modal.show {
+    @apply visible opacity-100;
+  }
+  .search-modal-overlay {
+    @apply fixed top-0 left-0 w-full h-full bg-black opacity-50;
+  }
+  .search-wrapper {
+    @apply bg-white dark:bg-darkmode-body w-[660px] max-w-[96%] mt-24 rounded shadow-lg relative z-10;
+  }
+  .search-wrapper-header {
+    @apply p-4 relative;
+  }
+  .search-wrapper-header-input {
+    @apply border border-solid w-full focus:ring-0 focus:border-dark border-border rounded-[4px] h-12 pr-4 pl-10 transition duration-200 outline-none dark:bg-darkmode-light dark:text-darkmode-text dark:border-darkmode-border dark:focus:border-darkmode-primary;
+  }
+  .search-wrapper-body {
+    @apply dark:bg-darkmode-light dark:shadow-none max-h-[calc(100vh-350px)] overflow-y-auto bg-light shadow-[inset_0_2px_18px_#ddd] p-4 rounded;
+  }
+  .search-wrapper-footer {
+    @apply text-xs select-none leading-none md:flex items-center px-3.5 py-2 hidden;
+  }
+  .search-wrapper-footer kbd {
+    @apply bg-light dark:bg-darkmode-light text-xs leading-none text-center mr-[3px] px-1 py-0.5 rounded-[3px];
+  }
+  .search-wrapper-footer span:not(:last-child) {
+    @apply mr-4;
+  }
+  .search-wrapper-footer span:last-child {
+    @apply ml-auto;
+  }
+  .search-result-empty {
+    @apply text-center cursor-text select-none px-0 py-8;
+  }
+  .search-result-group {
+    @apply mb-4;
+  }
+  .search-result-group-title {
+    @apply text-lg text-text-dark dark:text-darkmode-text-dark mb-[5px] px-3;
+  }
+  .search-result-item {
+    @apply rounded border bg-white dark:bg-darkmode-body dark:border-darkmode-border flex items-start mb-1 p-4 scroll-my-[30px] border-solid border-border relative;
+  }
+  .search-result-item mark {
+    @apply bg-yellow-200 rounded-[2px];
+  }
+  .search-result-item-title {
+    @apply text-lg font-bold text-text-dark dark:text-darkmode-text-dark leading-none;
+  }
+  .search-result-item-link::after {
+    @apply absolute top-0 right-0 bottom-0 left-0 z-10 content-[""];
+  }
+  .search-result-item-image {
+    @apply shrink-0 mr-3.5;
+  }
+  .search-result-item-image img {
+    @apply w-[60px] h-[60px] md:w-[100px] md:h-[100px] rounded-[4px] object-cover;
+  }
+  .search-result-item-description {
+    @apply text-sm mt-1;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .search-result-item-content {
+    @apply mx-0 my-1.5 empty:hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .search-result-item-taxonomies {
+    @apply text-sm flex flex-wrap items-center text-text-light dark:text-darkmode-text-light;
+  }
+  .search-result-item-taxonomies svg {
+    @apply inline-block mr-1;
+  }
+  .search-result-item-active,
+  .search-result-item:focus,
+  .search-result-item:hover {
+    @apply bg-dark dark:bg-dark;
+  }
+  .search-result-item-active .search-result-item-title,
+  .search-result-item:focus .search-result-item-title,
+  .search-result-item:hover .search-result-item-title {
+    @apply text-white;
+  }
+  .search-result-item-active .search-result-item-description,
+  .search-result-item:focus .search-result-item-description,
+  .search-result-item:hover .search-result-item-description {
+    @apply text-white/80;
+  }
+  .search-result-item-active .search-result-item-content,
+  .search-result-item:focus .search-result-item-content,
+  .search-result-item:hover .search-result-item-content {
+    @apply text-white/90;
+  }
+  .search-result-item-active .search-result-item-taxonomies,
+  .search-result-item:focus .search-result-item-taxonomies,
+  .search-result-item:hover .search-result-item-taxonomies {
+    @apply text-white/90;
   }
 }
 
 @layer utilities {
-  .resend-glow {
-    background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 55%);
+  .bg-gradient {
+    @apply bg-gradient-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%] dark:from-darkmode-light dark:to-darkmode-body;
   }
 
-  .text-gradient-resend {
-    background-image: linear-gradient(180deg, #ffffff 0%, #d6d6d6 60%, #888888 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .form-input {
+    @apply w-full rounded border-transparent bg-light px-6 py-4 text-text-dark placeholder:text-text-light focus:border-primary dark:focus:border-darkmode-primary focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-light dark:text-darkmode-text-light;
   }
 
-  .grid-bg {
-    position: relative;
-    isolation: isolate;
+  .form-label {
+    @apply mb-4 block font-secondary text-xl font-normal text-text-dark dark:text-darkmode-text-light;
   }
 
-  .grid-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-    background-size: 48px 48px;
-    opacity: 0.6;
-    mask-image: radial-gradient(ellipse at top, black 35%, transparent 75%);
-    pointer-events: none;
-    z-index: -1;
+  input#nav-toggle:checked + label #show-button {
+    @apply hidden;
+  }
+
+  input#nav-toggle:checked + label #hide-button {
+    @apply block;
+  }
+
+  input#nav-toggle:checked ~ #nav-menu {
+    @apply max-lg:block;
+  }
+
+  .swiper-pagination-bullet {
+    @apply h-2.5 w-2.5 bg-light opacity-100 dark:bg-darkmode-light;
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply h-4 w-4 bg-primary dark:bg-darkmode-primary;
   }
 }
 
