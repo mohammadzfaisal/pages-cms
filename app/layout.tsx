@@ -1,12 +1,21 @@
 import { Toaster } from "@/components/ui/sonner"
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Crimson_Pro } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+});
+
+const crimsonPro = Crimson_Pro({
+  subsets: ["latin"],
+  variable: "--font-serif",
   weight: ["400", "500", "600", "700"],
   display: "swap",
   preload: true,
@@ -30,8 +39,9 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen font-sans antialiased",
-          inter.variable
+          "min-h-screen font-serif antialiased",
+          inter.variable,
+          crimsonPro.variable
         )}
       >
         {children}

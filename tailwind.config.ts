@@ -21,39 +21,42 @@ const config = {
     extend: {
       fontFamily: {
         primary: [
-          "var(--font-sans)",
-          "Inter",
-          "Heebo",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif"
+          "var(--font-serif)",
+          "Crimson Pro",
+          "Georgia",
+          "ui-serif",
+          "serif"
         ],
         secondary: [
-          "var(--font-sans)",
-          "Inter",
-          "Signika",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif"
+          "var(--font-serif)",
+          "Crimson Pro",
+          "Georgia",
+          "ui-serif",
+          "serif"
         ],
         heading: [
-          "var(--font-sans)",
-          "Inter",
-          "Signika",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif"
+          "var(--font-serif)",
+          "Crimson Pro",
+          "Georgia",
+          "ui-serif",
+          "serif"
         ],
         sans: [
           "var(--font-sans)",
           "Inter",
-          "Heebo",
           "ui-sans-serif",
           "system-ui",
           "sans-serif"
         ],
+        serif: [
+          "var(--font-serif)",
+          "Crimson Pro",
+          "Georgia",
+          "ui-serif",
+          "serif"
+        ],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "monospace"],
-        button: ["var(--font-sans)", "Inter", "Heebo", "ui-sans-serif", "system-ui", "sans-serif"]
+        button: ["var(--font-serif)", "Crimson Pro", "Georgia", "ui-serif", "serif"]
       },
       colors: {
         border: "hsl(var(--border))",
