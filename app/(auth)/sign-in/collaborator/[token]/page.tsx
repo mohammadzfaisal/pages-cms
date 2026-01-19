@@ -17,7 +17,7 @@ export default async function Page({
   }
   
   if (user && !user.githubId) {
-    redirect(searchParams.redirect || '/');
+    redirect(searchParams.redirect || "/home");
   }
 
   const { tokenHash, emailLoginToken } = await getTokenData(params.token);

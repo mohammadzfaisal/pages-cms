@@ -148,7 +148,7 @@ const handleSignInWithToken = async (token: string, redirectTo?: string) => {
   if (redirectTo) {
     return redirect(redirectTo);
   } else {
-    return redirect("/");
+    return redirect("/home");
   }
 }
 

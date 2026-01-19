@@ -44,7 +44,7 @@ export default async function Layout({
           description={`You need to create a branch and add a ".pages.yml" file to configure it.`}
           className="absolute inset-0"
           cta="Select another repository"
-          href="/"
+          href="/home"
         />
       );
     }
@@ -74,7 +74,7 @@ export default async function Layout({
             description={<>It may have been removed, renamed or the path may be wrong.</>}
             className="absolute inset-0"
             cta="Select another repository"
-            href="/"
+            href="/home"
           />
         ); 
       case 403:
@@ -84,7 +84,7 @@ export default async function Layout({
             description={<>You do not have the sufficient permissions to access this repository.</>}
             className="absolute inset-0"
             cta="Select another repository"
-            href="/"
+            href="/home"
           />
         ); 
       default:

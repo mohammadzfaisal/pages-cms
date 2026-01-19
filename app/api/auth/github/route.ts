@@ -18,7 +18,7 @@ import { eq } from "drizzle-orm";
 
 export async function GET(request: Request): Promise<Response> {
 	const { session } = await getAuth();
-  if (session) return redirect("/");
+  if (session) return redirect("/home");
 
 	const url = new URL(request.url);
 	const code = url.searchParams.get("code");
@@ -57,7 +57,7 @@ export async function GET(request: Request): Promise<Response> {
 			return new Response(null, {
 				status: 302,
 				headers: {
-					Location: "/"
+					Location: "/home"
 				}
 			});
 		}
@@ -83,7 +83,7 @@ export async function GET(request: Request): Promise<Response> {
 		return new Response(null, {
 			status: 302,
 			headers: {
-				Location: "/"
+				Location: "/home"
 			}
 		});
 	} catch (e) {		

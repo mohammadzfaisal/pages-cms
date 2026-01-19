@@ -4,7 +4,7 @@ import { SignIn } from "@/components/sign-in";
 
 export default async function Page() {  
   const { session } = await getAuth();
-  if (session) return redirect("/");
+  if (session) return redirect("/home");
 
 	return (
     <SignIn/>

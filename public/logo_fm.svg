@@ -1,0 +1,17 @@
+<svg width="1024" height="1024" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:#9b9b9b">
+  <path
+    d="M20 32 L12 14 Q11 11 14 12 L30 20 Q36 12 46 15 Q50 10 54 15 Q64 12 70 20 L86 12 Q89 11 88 14 L80 32 Q86 40 86 56 Q86 78 68 88 Q59 93 50 93 Q41 93 32 88 Q14 78 14 56 Q14 40 20 32 Z"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <rect x="24" y="40" width="24" height="18" rx="6" fill="none" stroke="currentColor" stroke-width="3" />
+  <rect x="52" y="40" width="24" height="18" rx="6" fill="none" stroke="currentColor" stroke-width="3" />
+  <line x1="48" y1="49" x2="52" y2="49" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+  <text x="31" y="53" font-size="12" font-weight="700" fill="currentColor" font-family="Arial, sans-serif">F</text>
+  <text x="59" y="53" font-size="12" font-weight="700" fill="currentColor" font-family="Arial, sans-serif">M</text>
+  <path d="M50 60 L46 64 Q50 67 54 64 Z" fill="currentColor" />
+  <path d="M44 66 Q50 71 56 66" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>
