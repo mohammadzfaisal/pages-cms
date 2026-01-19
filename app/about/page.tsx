@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-lg font-bold mb-2 text-gray-300">Developer First</h3>
                   <p className="leading-relaxed">
-                    We're developers too. Every decision prioritizes developer experience and workflow efficiency.
+                    We are developers too. Every decision prioritizes developer experience and workflow efficiency.
                   </p>
                 </div>
                 <div>

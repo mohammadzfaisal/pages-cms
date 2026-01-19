@@ -93,7 +93,7 @@ export default async function Layout({
         errorMessage = (
           <Message
             title="Invalid branch"
-            description={`The branch "${decodedBranch}" doesn't exist. It may have been removed or renamed.`}
+            description={`The branch "${decodedBranch}" does not exist. It may have been removed or renamed.`}
             className="absolute inset-0"
             href={`/${owner}/${repo}`}
             cta={"Switch to the default branch"}

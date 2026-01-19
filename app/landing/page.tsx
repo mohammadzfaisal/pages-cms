@@ -218,7 +218,7 @@ export default function LandingPage() {
             Ready to simplify your workflow?
           </h2>
           <p className="text-lg md:text-xl text-white">
-            Join developers who've ditched the hassle and embraced structured content management.
+            Join developers who have ditched the hassle and embraced structured content management.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Link href="/sign-in">

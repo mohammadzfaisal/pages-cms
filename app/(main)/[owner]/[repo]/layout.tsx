@@ -70,7 +70,7 @@ export default async function Layout({
         // TODO: adjust as it may be the permissions as insufficient (suggest installing the app)
         return(
           <Message
-            title="This repository doesn't exist."
+            title="This repository does not exist."
             description={<>It may have been removed, renamed or the path may be wrong.</>}
             className="absolute inset-0"
             cta="Select another repository"
@@ -80,7 +80,7 @@ export default async function Layout({
       case 403:
         return(
           <Message
-            title="You can't access this repository."
+            title="You cannot access this repository."
             description={<>You do not have the sufficient permissions to access this repository.</>}
             className="absolute inset-0"
             cta="Select another repository"

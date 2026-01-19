@@ -18,7 +18,7 @@ export default function Error({
  
   return (
     <Message
-      title="Something's wrong"
+      title="Something is wrong"
       description={error.message}
       className="absolute inset-0"
     >
