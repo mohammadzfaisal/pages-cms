@@ -178,7 +178,7 @@ export default function LandingPage() {
                 Zero-Config Data Management
               </h3>
               <p className="text-white leading-relaxed">
-                Manage your data.json files through a structured UI that prevents "expected object, received array" errors.
+                Manage your data.json files through a structured UI that prevents &quot;expected object, received array&quot; errors.
               </p>
             </div>
 
@@ -204,7 +204,7 @@ export default function LandingPage() {
                 Validated Data Schemas
               </h3>
               <p className="text-white leading-relaxed">
-                Stop "TypeError" crashes with strictly enforced JSON/YAML structures.
+                Stop &quot;TypeError&quot; crashes with strictly enforced JSON/YAML structures.
               </p>
             </div>
           </div>
